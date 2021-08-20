@@ -12,7 +12,7 @@
   export default {
     methods: {
       goback() {
-        this.$router.push('/product')
+        this.$router.push('/')
       }
     }
   }

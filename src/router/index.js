@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import Home from '../pages/home/index.vue'
+import Index from '../pages/index/index.vue'
 import Product from '../pages/product/index.vue'
 import Cart from '../pages/cart/index.vue'
 import Order from '../pages/order/index.vue'
@@ -13,6 +14,10 @@ const routes = [
     children: [
       {
         name: 'index',
+        path: '/index',
+        component: Index,
+      },{
+        name: 'product',
         path: '/product',
         component: Product,
       }
