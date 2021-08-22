@@ -74,6 +74,17 @@
           <dd><a href="javascript;;">了解小米</a></dd>
           <dd><a href="javascript;;">了解小米</a></dd>
         </dl>
+        <div class="footer-concat">
+          <p class="phone">400-100-5678</p>
+          <p>8:00-18:00（仅收市话费）</p>
+          <a href="javascript;;"  class="service"><span class="icon-message"></span>人工服务</a>
+          <div class="follow">
+            关注小米：
+            <a href="javascript;;" class="wb"></a>
+            <a href="javascript;;" class="wx" @mouseover="showImg" @mouseout="notShowImg"></a>
+            <img src="/public/imgs/wx-img.png" :style="{display: isshow}" alt="" srcset="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -81,7 +92,20 @@
 
 <script>
   export default {
-    name: "nav-footer"
+    name: "nav-footer",
+    data() {
+      return {
+        isshow: "none"
+      }
+    },
+    methods: {
+      showImg () {
+        this.isshow = 'block'
+      },
+      notShowImg() {
+        this.isshow = 'none'
+      } 
+    }
   }
 </script>
 
@@ -158,22 +182,13 @@
     .footer-link{
       padding: 40px 0;
       display: flex;
-      // &::before{
-      //   content: "";
-      //   display: table;
-      // }
-      // &::after{
-      //   clear: both;
-      // }
       .col-links{
         display: block;
-        width: 160px;
+        width: 165px;
         margin: 0;
-        text-align: center;
         dt{
           display: block;
           margin: -1px 0 26px;
-          text-align: center;
           font-size: 14px;
           line-height: 1.25;
           color: #424242;
@@ -185,7 +200,6 @@
           margin: 10px 0 0;
           font-size: 12px;
           display: block;
-          text-align: center;
           a{
             color: #757575;
             font-size: 12px;
@@ -194,6 +208,78 @@
             }
           }
         }
+      }
+      .footer-concat{
+        color: #616161;
+        width: 251px;
+        border-left: 1px solid #e0e0e0;
+        text-align: center;
+        p{
+          margin: 0 0 5px 0;
+          font-size: 12px;
+        }
+        .phone{
+          font-size: 22px;
+          color: $colorA;
+          line-height: 1;
+        }
+        .service{
+          display: inline-block;
+          border: 1px solid $colorA;
+          width: 118px;
+          height: 28px;
+          font-size: 12px;
+          line-height: 28px;
+          text-align: center;
+          color: $colorA;
+          span{
+            display: inline-block;
+            @include bgImg(20px, 20px,'/imgs/icon-message-check.png');
+            vertical-align: -6px;
+          }
+          &:hover{
+            color: #fff;
+            background: $colorA;
+            span{
+              @include bgImg(20px, 20px,'/imgs/icon-message.png');
+            }
+          }
+        }
+        .follow{
+          position: relative;
+          font-size: 12px;
+          margin-top: 10px;
+          a{
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 6px;
+            margin-top: -3px;
+          }
+          .wb{
+            display: inline-block;
+            @include bgImg(24px, 24px,'/imgs/wb.png');
+            &:hover{
+              @include bgImg(24px, 24px,'/imgs/wb@2x.png');
+            }
+          }
+          .wx{
+            display: inline-block;
+            @include bgImg(24px, 24px,'/imgs/wx.png');
+            &:hover{
+              @include bgImg(24px, 24px,'/imgs/wx@2x.png');
+            }
+          }
+          img{
+            position: absolute;
+            width: 126px;
+            height: 126px;
+            z-index: 10;
+            top: 20px;
+            left: 100px;
+          }
+       }
       }
     }
   }
