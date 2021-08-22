@@ -10,6 +10,12 @@ const axiosInstance = axios.create({
 
 })
 
+axiosInstance.interceptors.request.use(req => {
+  const headers = req.headers;
+  if (headers.Authorization) headers.Authorization = 'Bear Jack'
+  return req
+})
+
 axiosInstance.interceptors.response.use(res => {
   const {status,data,msg} = res.data
   if (status == 0) {
@@ -22,3 +28,13 @@ axiosInstance.interceptors.response.use(res => {
   }
 
 })
+function request(options) {
+  if (options.methods.toLowerCase() === 'get') {
+    options.params = options.data
+  }
+  axiosInstance.defaults.baseURL = url
+  return axiosInstance(options)
+
+}
+export default request
+
