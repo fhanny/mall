@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-const TOKEN_INVALID = 'token认证失败,请重新登录'
-const NETWORK_ERR = '网络请求异常，请稍后重试'
+// const TOKEN_INVALID = 'token认证失败,请重新登录'
+// const NETWORK_ERR = '网络请求异常，请稍后重试'
 
 const url = "https://www.fastmock.site/mock/ad03952159471f89cad0864ef31a0a52/api"
 const axiosInstance = axios.create({

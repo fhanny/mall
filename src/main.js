@@ -9,3 +9,4 @@ import request from './api/request'
 const app = createApp(App)
 app.config.globalProperties.$axios = request
 app.use(router).use(ElementPlus).mount('#app')
+

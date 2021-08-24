@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import NavHeader from './components/header/index.vue'
-import NavFooter from './components/footer/index.vue'
+
+
 export default {
-  components: {
-    NavHeader,
-    NavFooter
-  }
+  name: 'App',
+ 
 }
 </script>
+
+<style lang="scss" scoped>
+*{
+  padding: 0;
+  margin: 0;
+}
+</style>

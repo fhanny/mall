@@ -82,7 +82,7 @@
             关注小米：
             <a href="javascript;;" class="wb"></a>
             <a href="javascript;;" class="wx" @mouseover="showImg" @mouseout="notShowImg"></a>
-            <img src="/public/imgs/wx-img.png" :style="{display: isshow}" alt="" srcset="">
+            <img src="../../assets/imgs/wx-img.png" :style="{display: isshow}" alt="" srcset="">
           </div>
         </div>
       </div>
@@ -141,37 +141,37 @@
             vertical-align: middle;
           }
           .icon-tool{
-            @include bgImg(24px, 24px,'/imgs/icon-setting.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/icon-setting.png');
           }
           .icon-7day{
-            @include bgImg(24px, 24px,'/imgs/icon-7day.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/icon-7day.png');
           }
           .icon-15day{
-            @include bgImg(24px, 24px,'/imgs/icon-15day.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/icon-15day.png');
           }
           .icon-gift{
-            @include bgImg(24px, 24px,'/imgs/icon-gift.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/icon-gift.png');
           }
           .icon-loc{
-            @include bgImg(24px, 24px,'/imgs/icon-loc.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/icon-loc.png');
           }
           &:hover{
             color: $colorA;
             transition: all .3s;
             .icon-tool{
-              @include bgImg(24px, 24px,'/imgs/icon-setting-check.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/icon-setting-check.png');
             }
             .icon-7day{
-              @include bgImg(24px, 24px,'/imgs/icon-7day-check.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/icon-7day-check.png');
             }
             .icon-15day{
-              @include bgImg(24px, 24px,'/imgs/icon-15day-check.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/icon-15day-check.png');
             }
             .icon-gift{
-              @include bgImg(24px, 24px,'/imgs/icon-gift-check.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/icon-gift-check.png');
             }
             .icon-loc{
-              @include bgImg(24px, 24px,'/imgs/icon-loc-check.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/icon-loc-check.png');
             }
           }
         }
@@ -234,14 +234,14 @@
           color: $colorA;
           span{
             display: inline-block;
-            @include bgImg(20px, 20px,'/imgs/icon-message-check.png');
+            @include bgImg(20px, 20px,'../../assets/imgs/icon-message-check.png');
             vertical-align: -6px;
           }
           &:hover{
             color: #fff;
             background: $colorA;
             span{
-              @include bgImg(20px, 20px,'/imgs/icon-message.png');
+              @include bgImg(20px, 20px,'../../assets/imgs/icon-message.png');
             }
           }
         }
@@ -259,16 +259,16 @@
           }
           .wb{
             display: inline-block;
-            @include bgImg(24px, 24px,'/imgs/wb.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/wb.png');
             &:hover{
-              @include bgImg(24px, 24px,'/imgs/wb@2x.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/wb@2x.png');
             }
           }
           .wx{
             display: inline-block;
-            @include bgImg(24px, 24px,'/imgs/wx.png');
+            @include bgImg(24px, 24px,'../../assets/imgs/wx.png');
             &:hover{
-              @include bgImg(24px, 24px,'/imgs/wx@2x.png');
+              @include bgImg(24px, 24px,'../../assets/imgs/wx@2x.png');
             }
           }
           img{
