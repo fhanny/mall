@@ -188,7 +188,7 @@
             width: 1226px;
             border-top: 1px solid #e5e5e5;
             box-shadow: 0px 7px 6px 0px rgb(0, 0, 0, .11);
-            z-index: 10;
+            z-index: 1000;
             background: #fff;
             height: 0;
             overflow: hidden;

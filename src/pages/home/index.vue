@@ -1,9 +1,7 @@
 <template>
   <div>
     <NavHeader></NavHeader>
-    <!-- <button @click="goProductPage">点击我</button> -->
-    <!-- <router-view></router-view> -->
-    <Banner></Banner>
+    <router-view></router-view>
     <NavFooter></NavFooter>
   </div>
 </template>
@@ -11,7 +9,6 @@
 <script>
 import NavHeader from '../../components/header/index.vue'
 import NavFooter from '../../components/footer/index.vue'
-import Banner from '../../components/banner/index.vue'
 export default {
   methods: {
     // goProductPage() {
@@ -20,7 +17,6 @@ export default {
   },
   components: {
     NavHeader,
-    Banner,
     NavFooter
   }
 }
