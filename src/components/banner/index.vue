@@ -47,11 +47,11 @@ export default {
   data() {
     return {
       slideList: [
-        { id: "42", imgUrl: "/slider/slide-1.jpg" },
-        { id: "45", imgUrl: "/slider/slide-2.jpg" },
-        { id: "46", imgUrl: "/slider/slide-3.jpg" },
-        { id: "42", imgUrl: "/slider/slide-4.jpg" },
-        { id: "42", imgUrl: "/slider/slide-5.jpg" },
+        { id: "42", imgUrl: "/imgs/slider/slide-1.jpg" },
+        { id: "45", imgUrl: "/imgs/slider/slide-2.jpg" },
+        { id: "46", imgUrl: "/imgs/slider/slide-3.jpg" },
+        { id: "42", imgUrl: "/imgs/slider/slide-4.jpg" },
+        { id: "42", imgUrl: "/imgs/slider/slide-5.jpg" },
       ],
     };
   },

@@ -3,7 +3,16 @@
     <ul class="menu-wrapper">
       <li class="menu-item">
         <a href="javascript:;">手机 电话卡</a>
-        <div class="children"></div>
+        <div class="children">
+          <ul v-for="(item,index) in menuList" :key="index">
+            <li v-for="(sub,idx) in item" :key="idx">
+              <a class="link" href="">
+                <img :src="sub ? sub.img : '/imgs/item-box-1.png'" alt="">
+                {{ sub ? sub.name : '小米9'}}
+              </a>
+            </li>
+          </ul>
+        </div>
       </li>
       <li class="menu-item">
         <a href="javascript:;">手机 电话卡</a>
@@ -40,6 +49,39 @@
 <script>
 export default {
   name: "NavMenu",
+  data() {
+    return {
+      menuList: [
+        [
+          {
+            id: 30,
+            img: "/imgs/item-box-1.png",
+            name: "小米CC",
+          },
+          {
+            id: 31,
+            img: "/imgs/item-box-2.png",
+            name: "小米8青春版",
+          },
+          {
+            id: 32,
+            img: "/imgs/item-box-3.jpg",
+            name: "小米CC",
+          },
+          {
+            id: 33,
+            img: "/imgs/item-box-3.jpg",
+            name: "小米CC",
+          },
+        ],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+      ],
+    };
+  },
 };
 </script>
 
@@ -58,8 +100,12 @@ export default {
   .menu-item {
     height: 50px;
     line-height: 50px;
+    /* position: relative; */
     &:hover {
       background-color: $colorA;
+      .children{
+        display: block;
+      }
     }
     a {
       font-size: 16px;
@@ -72,7 +118,6 @@ export default {
         content: "";
         @include bgImg(10px, 15px, "../../assets/imgs/icon-arrow.png");
         right: 30px;
-        /* top:16px */
         top: 16px;
       }
     }
@@ -82,11 +127,42 @@ export default {
       position: absolute;
       top: 0;
       left: 234px;
-      /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18); */
-      z-index: 24;
+      /* z-index: 10; */
       border: 1px solid #e0e0e0;
       border-left: 0;
       background: #fff;
+      display: none;
+      ul{
+        /* z-index: 100; */
+        display: flex;
+        justify-content: space-between;
+        height: 75px;
+        li{
+          z-index: 100;
+          position: relative;
+          height: 75px;
+          line-height: 75px;
+          flex: 1;
+          padding-left: 23px;
+          .link{
+            display: block;
+            padding: 18px 20px;
+            line-height: 40px;
+            color: #333;
+            &:hover{
+              color: $colorA;
+            }
+            img{
+              width: 40px;
+              height: 40px;
+              vertical-align: middle;
+              margin-right: 15px;
+            }
+
+          }
+        }
+      }
+
     }
   }
 }
