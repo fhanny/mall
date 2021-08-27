@@ -10,7 +10,7 @@
           <ul class="channel-list">
             <li v-for="(item, index) in adsChannelList" :key="index">
               <a href="">
-                <img :src="item.img" alt="" />
+                <img v-lazy="item.img" alt="" />
                 {{ item.name }}
               </a>
             </li>
@@ -35,17 +35,21 @@
       </div>
     </div>
     <div class="product-box">
-      <Product></Product>
+      <Product v-on:addcart="isShowModal"></Product>
     </div>
   </div>
   <Modal  
     title="提示" 
-    :confirmText="查看详情" 
-    :btnType="1"
-    :modalType="samll"
-    :showModal="showModal"
+    :confirmText="查看购物车" 
+    :btnType ="1"
+    :modalType ="samll"
+    :showModal ="showModal"
+    v-on:submit ="goToCarts"
+    v-on:cancle = "showModal=false"
   >
-    
+    <template v-slot:body>
+      <p>商品添加成功!!</p>
+    </template>
   </Modal>
 </template>
 
@@ -71,12 +75,21 @@ export default {
         { img: "/imgs/icon-service.png", name: "保障服务" },
         { img: "/imgs/icon-service.png", name: "保障服务" },
       ],
+      showModal: false
     };
   },
   methods: {
     goProductPage() {
       this.$router.push("/product");
     },
+    isShowModal(data) {
+      // console.log(data)
+      this.showModal = data
+    },
+    goToCarts () {
+
+      this.$router.push("/cart")
+    }
   },
 };
 </script>

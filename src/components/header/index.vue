@@ -29,7 +29,7 @@
                 <li class="product" v-for="(item, index) in phoneLists" :key="index">
                   <div>
                     <div class="pro-img">
-                      <img :src="item.mainImage" alt="" />
+                      <img v-lazy="item.mainImage" alt="" />
                     </div>
                     <div class="pro-name">{{item.name}}</div>
                     <div class="pro-price">{{item.price}}元起</div>

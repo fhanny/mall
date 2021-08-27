@@ -82,7 +82,7 @@
             关注小米：
             <a href="javascript;;" class="wb"></a>
             <a href="javascript;;" class="wx" @mouseover="showImg" @mouseout="notShowImg"></a>
-            <img src="../../assets/imgs/wx-img.png" :style="{display: isshow}" alt="" srcset="">
+            <img v-lazy="'../../assets/imgs/wx-img.png'" :style="{display: isshow}" alt="" srcset="">
           </div>
         </div>
       </div>

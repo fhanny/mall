@@ -4,19 +4,19 @@
     <div class="wrapper">
       <div class="product-left">
         <a href="">
-          <img src="../../assets/imgs/mix-alpha.jpg" alt="" />
+          <img v-lazy="'../../assets/imgs/mix-alpha.jpg'" alt="" />
         </a>
       </div>
       <div class="product-right">
         <div class="list" v-for="(item, index) in phoneList" :key="index">
           <div class="item" v-for="sub in item" :key="sub.id">
             <div class="item-img">
-              <img :src="sub.mainImage" alt="" />
+              <img v-lazy="sub.mainImage" alt="" />
             </div>
             <div class="item-info">
-              <h3>{{sub.name}}</h3>
-              <p>{{sub.subtitle}}</p>
-              <p class="price" @click="addCart">{{sub.price}}起</p>
+              <h3>{{ sub.name }}</h3>
+              <p>{{ sub.subtitle }}</p>
+              <p class="price" @click="addCart(sub.id)">{{ sub.price }}起</p>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default {
     };
   },
   mounted() {
-    this.getPhoneList()
+    this.getPhoneList();
   },
   methods: {
     getPhoneList() {
@@ -49,10 +49,24 @@ export default {
         console.log(res.list);
         // this.phoneLists = res
         if (res.list.length > 6) {
-          this.phoneList = [res.list.slice(6, 10), res.list.slice(10, 14)]
+          this.phoneList = [res.list.slice(6, 10), res.list.slice(10, 14)];
           console.log(this.phoneList);
         }
       });
+    },
+    addCart(id) {
+      this.$axios({
+        url: "/carts",
+        methods: "put",
+        data: {
+          productId: id,
+          selected: true
+        },
+      }).then((res) => {
+        console.log(res)
+      }).catch(() => {
+        this.$emit('addcart',true)
+      })
     },
   },
 };
@@ -123,11 +137,15 @@ export default {
             .price {
               color: $colorA;
               font-size: $fontJ;
-              &::after{
-                content: '';
-                @include bgImg(22px,22px, '../../assets/imgs/icon-cart-hover.png');
+              &::after {
+                content: "";
+                @include bgImg(
+                  22px,
+                  22px,
+                  "../../assets/imgs/icon-cart-hover.png"
+                );
                 vertical-align: middle;
-                margin-left: 5px; 
+                margin-left: 5px;
               }
             }
           }

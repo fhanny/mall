@@ -16,7 +16,7 @@
   >
     <swiper-slide v-for="(item, index) in slideList" :key="index">
       <a href="">
-        <img :src="item.imgUrl" alt="" srcset="" />
+        <img v-lazy="item.imgUrl" alt="" srcset="" />
       </a>
     </swiper-slide>
     <div class="swiper-pagination"></div>
@@ -77,7 +77,7 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
   .swiper-button-prev{
     position: absolute;
