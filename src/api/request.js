@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ElMessage } from 'element-plus'
+// import { ElMessage } from 'element-plus'
 // const TOKEN_INVALID = 'token认证失败,请重新登录'
 // const NETWORK_ERR = '网络请求异常，请稍后重试'
 
@@ -17,13 +17,14 @@ axiosInstance.interceptors.request.use(req => {
 })
 
 axiosInstance.interceptors.response.use(res => {
+  console.log(res)
   const {status,data,msg} = res.data
   if (status == 0) {
     return data
   } else if(status == 10) {
     window.location.href= '/#/login'
   } else {
-    ElMessage.error(msg)
+    // ElMessage.error(msg)
     return Promise.reject(msg)
   }
 

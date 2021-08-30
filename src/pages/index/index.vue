@@ -39,12 +39,12 @@
     </div>
   </div>
   <Modal  
-    title="提示" 
-    :confirmText="查看购物车" 
-    :btnType ="1"
-    :modalType ="samll"
-    :showModal ="showModal"
-    v-on:submit ="goToCarts"
+    title = "提示" 
+    confirmText = "查看购物车" 
+    btnType = "1"
+    modalType = "samll"
+    :showModal = "showModal"
+    v-on:submit = "goToCarts"
     v-on:cancle = "showModal=false"
   >
     <template v-slot:body>

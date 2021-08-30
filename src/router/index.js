@@ -4,7 +4,7 @@ import Index from '../pages/index/index.vue'
 import Product from '../pages/product/index.vue'
 import Cart from '../pages/cart/index.vue'
 import Order from '../pages/order/index.vue'
-
+import Login from '../pages/login/index.vue'
 const routes = [
   {
     name: 'home',
@@ -16,17 +16,23 @@ const routes = [
         name: 'index',
         path: '/index',
         component: Index,
-      },{
+      },
+      {
         name: 'product',
         path: '/product',
         component: Product,
-      }
+      },  
+      {
+        name: 'cart',
+        path: '/cart',
+        component: Cart,
+      },
     ]
   },
   {
-    name: 'cart',
-    path: '/cart',
-    component: Cart,
+    name: 'login',
+    path: '/login',
+    component: Login
   },
   {
     name: 'order',

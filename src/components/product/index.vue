@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="product-left">
         <a href="">
-          <img v-lazy="'../../assets/imgs/mix-alpha.jpg'" alt="" />
+          <img src='../../assets/imgs/mix-alpha.jpg' alt="" />
         </a>
       </div>
       <div class="product-right">
